@@ -73,9 +73,9 @@
         src: /home/ansible/MainProjectOne/AnsibleTASK/monitoring_install.sh
         dest: /home/ansible/monitoring_install.sh
         owner: ansible
-        group: root
+  
     - name: Run the monitoring installation script
-      ansible.builtin.script: /home/ansible/monitoring_install.sh
+      ansible.builtin.script: /home/ansible/MainProjectOne/AnsibleTASK/monitoring_install.sh
 
          
 
