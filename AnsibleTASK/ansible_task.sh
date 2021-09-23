@@ -11,9 +11,9 @@ export EC2_INI_PATH=/inventory/ec2.ini
 
 # download AnsibleTASK files from github
 echo ----- downloading repository -----
-git clone https://github.com/adesoji-blick/ProjectEnhancement.git
+git clone https://github.com/adesoji-blick/MainProjectOne.git
 
-cd ProjectEnhancement/AnsibleTASK/
+cd MainProjectOne/AnsibleTASK/
 
 echo ----- setting dynamic inventory permissions -----
 # Run Ansible playbook

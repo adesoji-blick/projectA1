@@ -22,7 +22,7 @@
 
     - name: create a welcome message
       template:
-        src: /home/ansible/ProjectEnhancement/AnsibleTASK/templates/welcome_msg.j2
+        src: /home/ansible/MainProjectOne/AnsibleTASK/templates/welcome_msg.j2
         dest: /etc/profile.d/welcome_msg.sh
         owner: root
         group: root
@@ -68,7 +68,14 @@
 - hosts: tag_Name_monitor_server
   become: True
   tasks:
-        
+    - name: copy monitoring installation script
+      template:
+        src: /home/ansible/MainProjectOne/AnsibleTASK/monitoring_install.sh
+        dest: /home/ansible/monitoring_install.sh
+        owner: ansible
+        group: root
+    - name: Run the monitoring installation script
+      ansible.builtin.script: /home/ansible/monitoring_install.sh
 
          
 
