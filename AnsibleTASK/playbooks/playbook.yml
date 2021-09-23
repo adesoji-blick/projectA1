@@ -79,7 +79,19 @@
     - name: Run the monitoring installation script
       command: '/home/ansible/monitoring_install.sh'
 
-
+- hosts: all
+  become: True
+  tasks:
+    - name: copy exporter installation script
+      template:
+        src: /home/ansible/MainProjectOne/AnsibleTASK/exporter_install.sh
+        dest: /home/ansible/exporter_install.sh
+        owner: ansible
+        group: ansible
+        mode: 0755
+  
+    - name: Run the monitoring installation script
+      command: '/home/ansible/exporter_install.sh'
          
 
 

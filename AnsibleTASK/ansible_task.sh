@@ -22,4 +22,4 @@ chmod 755 inventory/ec2.ini
 
 echo ----- running Ansible scripts -----
 ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i inventory/ec2.py playbooks/playbook.yml -C
-ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i inventory/ec2.py playbooks/playbook.yml
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i inventory/ec2.py playbooks/playbook.yml -vvv

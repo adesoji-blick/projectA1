@@ -4,4 +4,4 @@
 git clone https://github.com/adesoji-blick/prometheus-grafana.git
 
 # run install script
-sh prometheus-grafana/monitoringTool-install.sh
+sh prometheus-grafana/nodeExporter-install.sh
