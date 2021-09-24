@@ -1,25 +1,27 @@
 ---
 # tasks file for roles/grafana
-- name: install gpg
-  apt:
-    name: gnupg,software-properties-common
-    state: present
-    update_cache: yes
-    cache_valid_time: 3600
+# - name: install gpg
+#   yum:
+#     name: gnupg,software-properties-common
+#     state: present
+#     update_cache: yes
+#     cache_valid_time: 3600
 
-- name: add gpg hey
-  apt_key:
-    url: "https://packages.grafana.com/gpg.key"
+- name: add grafana gpg key
+  rpm_key:
+    state: present
+    key: "https://packages.grafana.com/gpg.key"
     validate_certs: no
 
-- name: add repository
-  apt_repository:
-    repo: "deb https://packages.grafana.com/oss/deb stable main"
+- name: add grafana repository
+  get_url:
+    url: https://packages.grafana.com/enterprise/rpm
+    dest: /etc/yum.repos.d/grafana.repo
     state: present
     validate_certs: no
 
 - name: install grafana
-  apt:
+  yum:
     name: grafana
     state: latest
     update_cache: yes
@@ -33,7 +35,7 @@
 
 - name: wait for service up
   uri:
-    url: "http://15.223.48.186:3000"
+    url: "localhost:3000"
     status_code: 200
   register: __result
   until: __result.status == 200
