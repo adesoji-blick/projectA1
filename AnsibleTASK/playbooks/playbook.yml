@@ -67,31 +67,17 @@
 
 - hosts: tag_Name_monitor_server
   become: True
-  tasks:
-    - name: copy monitoring installation script
-      template:
-        src: /home/ansible/MainProjectOne/AnsibleTASK/monitoring_install.sh
-        dest: /home/ansible/monitoring_install.sh
-        owner: ansible
-        group: ansible
-        mode: 0755
-  
-    - name: Run the monitoring installation script
-      command: '/home/ansible/monitoring_install.sh'
+  name: install monitoring stack
+  roles:
+  - prometheus
+  - grafana
 
 - hosts: all
   become: True
-  tasks:
-    - name: copy exporter installation script
-      template:
-        src: /home/ansible/MainProjectOne/AnsibleTASK/exporter_install.sh
-        dest: /home/ansible/exporter_install.sh
-        owner: ansible
-        group: ansible
-        mode: 0755
-  
-    - name: Run the monitoring installation script
-      command: '/home/ansible/exporter_install.sh'
+  name: install node-exporter
+  roles:
+  - node-exporter
+
          
 
 

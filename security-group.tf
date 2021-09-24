@@ -1,5 +1,6 @@
-# Provisioning Tools Security Group
+## Security Groups Creation
 
+# Provisioning Tools Server Security Group
 resource "aws_security_group" "tool_sg" {
   name = "${var.sg2_name}-Sg"
   # vpc_id = var.vpc_id
@@ -31,7 +32,7 @@ resource "aws_security_group" "tool_sg" {
   }
 }
 
-# Provisioning Apps Security Group
+# Provisioning Apps Server Security Group
 resource "aws_security_group" "app_sg" {
   name = "${var.sg_name}-Sg"
   # vpc_id = var.vpc_id
@@ -70,8 +71,7 @@ resource "aws_security_group" "app_sg" {
   }
 }
 
-# Provisioning Monitoring Security Group
-
+# Provisioning Monitoring Servers Security Group
 resource "aws_security_group" "monitor_sg" {
   name = "${var.sg3_name}-Sg"
   # vpc_id = var.vpc_id

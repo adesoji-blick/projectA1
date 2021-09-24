@@ -39,4 +39,10 @@ build {
   provisioner "shell" {
     script = "../Scripts/java_OpenJDK11.sh"
   }
+
+  post-processor "manifest" {
+    output     = "manifest.json"
+    strip_path = true
+  }
+
 }

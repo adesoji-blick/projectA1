@@ -1,15 +1,18 @@
-output "instance-public-ip" {
+output "Ansible-toolServer-public-ip" {
   value = aws_instance.tool-server.*.public_ip
 }
 
-# output "App-Project-Sg" {
-#   value = aws_security_group.app_sg.id
+output "MonitoringServer-public-ip" {
+  value = aws_instance.monitoring-server.*.public_ip
+}
+
+# output "JenkinServer-public-ip" {
+#   value = module.Jenkins-Node.*.public_ip
 # }
 
-# output "App-vpc" {
-#   value = aws_vpc.app_vpc.id
+# output "AppServers-public-ip" {
+#   value = module.App-Nodes.*.public_ip
 # }
 
-# output "App-vpc-subnet" {
-#   value = aws_subnet.app_vpc_subnet.*.id
-# }
+
+

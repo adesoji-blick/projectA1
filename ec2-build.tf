@@ -1,5 +1,5 @@
 ## EC2 Infrastructure creation template
-
+## Ansible Tool Server(s) Creation Resource
 resource "aws_instance" "tool-server" {
   count                = var.resource_count
   user_data            = data.template_file.dependencies_installation.template
@@ -18,6 +18,7 @@ resource "aws_instance" "tool-server" {
   }
 }
 
+## Monitoring Server(s) Creation Resource
 resource "aws_instance" "monitoring-server" {
   count                = var.monitor_count
   user_data            = data.template_file.dependencies_installation.template
@@ -36,6 +37,7 @@ resource "aws_instance" "monitoring-server" {
   }
 }
 
+## Jenkins Server(s) Creation Module
 module "Jenkins-Node" {
   source        = "./Modules"
   count         = var.jenkins_instance_count
@@ -53,6 +55,7 @@ module "Jenkins-Node" {
   # ami_id        = data.aws_ami.jenkins-ami[count.index].id
 }
 
+## Application Server(s) Creation Module
 module "App-Nodes" {
   source        = "./Modules"
   count         = var.app_instance_count

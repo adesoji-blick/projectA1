@@ -1,0 +1,41 @@
+{
+  "builds": [
+    {
+      "name": "jenkins",
+      "builder_type": "amazon-ebs",
+      "build_time": 1632516377,
+      "files": null,
+      "artifact_id": "ca-central-1:ami-073e31abe63e8b3fb",
+      "packer_run_uuid": "6a2ce6f2-19d5-8e72-a336-95d0ee92501e",
+      "custom_data": null
+    },
+    {
+      "name": "jenkins2",
+      "builder_type": "amazon-ebs",
+      "build_time": 1632516383,
+      "files": null,
+      "artifact_id": "ca-central-1:ami-0a876f95a3b2d3a8f",
+      "packer_run_uuid": "6a2ce6f2-19d5-8e72-a336-95d0ee92501e",
+      "custom_data": null
+    },
+    {
+      "name": "monitor",
+      "builder_type": "amazon-ebs",
+      "build_time": 1632516485,
+      "files": null,
+      "artifact_id": "ca-central-1:ami-0bb5525eb50779cf2",
+      "packer_run_uuid": "6a2ce6f2-19d5-8e72-a336-95d0ee92501e",
+      "custom_data": null
+    },
+    {
+      "name": "ansible",
+      "builder_type": "amazon-ebs",
+      "build_time": 1632516608,
+      "files": null,
+      "artifact_id": "ca-central-1:ami-015224d9f18a689d2",
+      "packer_run_uuid": "6a2ce6f2-19d5-8e72-a336-95d0ee92501e",
+      "custom_data": null
+    }
+  ],
+  "last_run_uuid": "6a2ce6f2-19d5-8e72-a336-95d0ee92501e"
+}

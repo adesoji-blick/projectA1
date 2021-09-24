@@ -33,8 +33,13 @@ build {
     destination = "/tmp/"
   }
 
-    provisioner "shell" {
+  provisioner "shell" {
     script = "../Scripts/ansible_admin.sh"
+  }
+
+  post-processor "manifest" {
+    output     = "manifest.json"
+    strip_path = true
   }
 
 }
