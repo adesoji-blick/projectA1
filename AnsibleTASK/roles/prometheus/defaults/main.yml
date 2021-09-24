@@ -1,24 +1,4 @@
 ---
-# handlers file for roles/prometheus
-- name: restart_prometheus
-  systemd:
-    name: prometheus
-    state: restarted
-    enabled: yes
-    daemon_reload: yes
-
-- name: reload_prometheus
-  uri:
-    url: http://localhost:9090/-/reload
-    method: POST
-    status_code: 200
-[ec2-user@ip-172-31-8-44 handlers]$ cd ../files/
-[ec2-user@ip-172-31-8-44 files]$ ls
-[ec2-user@ip-172-31-8-44 files]$ cd ../defaults/
-[ec2-user@ip-172-31-8-44 defaults]$ ls
-main.yml
-[ec2-user@ip-172-31-8-44 defaults]$ cat main.yml
----
 # defaults file for roles/prometheus
 prometheus_dir_configuration: "/etc/prometheus"
 prometheus_retention_time: "365d"
