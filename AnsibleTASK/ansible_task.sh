@@ -11,7 +11,7 @@ export EC2_INI_PATH=/inventory/ec2.ini
 
 # download AnsibleTASK files from github
 echo ----- downloading repository -----
-git clone https://github.com/adesoji-blick/MainProjectOne.git
+git clone git@github.com:adesoji-blick/projectA1.git 
 
 cd MainProjectOne/AnsibleTASK/
 
