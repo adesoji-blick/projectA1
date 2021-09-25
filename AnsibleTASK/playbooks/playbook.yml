@@ -66,17 +66,17 @@
         var: result.stdout
 
 - hosts: tag_Name_monitor_server
-  become: True
   name: install monitoring stack
+  become: True
   roles:
-  - prometheus
-  - grafana
+    - prometheus
+    - grafana
 
 - hosts: all
-  become: True
   name: install node-exporter
+  become: True
   roles:
-  - node-exporter
+    - node-exporter
 
          
 
